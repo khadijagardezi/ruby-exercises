@@ -1,7 +1,9 @@
+# Typically, everything inside the function is indented at either 2 spaces or 4 spaces - at SW we use 2 spaces
 def full_day(day)
-full_name = ""
+full_name = "" # This assignment is redundant - you are overwriting the value within each case statement, so the initial value is unneeded.
 case day
 when "mon"
+  # While this does work, a cleaner alternative could be to just put the string value 'Monday'. Using case statements means something is being evaluated,and an evaluation returns something.
   full_name = "Monday"
 when "tue"
   full_name = "Tuesday"
@@ -18,7 +20,10 @@ when "sun"
 else
   full_name = "Invalid day"
 end
+  # Ruby has implicit return, meaning that it will always return the last statement in a method.
+  # While it doesn't hurt anything, by convention we generally do not explicitly use the 'return' when it's the last line
   return full_name
+  # If you use the string value instead, you can remove this line altogether. Due to implicit return, full_day will evaluate and return the string value.
 end
 
 
